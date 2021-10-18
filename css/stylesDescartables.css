@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: beige;
+}
+body header {
+  display: flex;
+  flex-direction: row;
+  background-image: url(../img/madera.jpg);
+  width: 100%;
+  height: 150px;
+  font-size: 60px;
+  color: #000;
+  text-align: right;
+  border: 2px solid #000;
+}
+body header .header__h1 {
+  padding-top: 32px;
+  padding-right: 16px;
+  font-family: "Dancing Script", cursive;
+  text-shadow: 3px 3px 4px #FFF;
+  font-size: calc(1.375rem + 4.5vw);
+  -webkit-animation-name: efectoOpacidad;
+          animation-name: efectoOpacidad;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+@-webkit-keyframes efectoOpacidad {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes efectoOpacidad {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body header .header__flexHeader {
+  flex-wrap: wrap;
+}
+body nav {
+  padding: 16px 16px;
+  position: sticky;
+  top: 0px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-image: linear-gradient(to right, #802222, #802222);
+}
+body nav .nav__ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  text-align: center;
+}
+body nav .nav__ul .nav__ul__li {
+  color: white;
+  padding-left: 32px;
+  font-size: 24px;
+}
+body nav .nav__ul li :hover {
+  color: salmon;
+}
+body nav .nav__ul .nav__ul__ul {
+  position: absolute;
+  display: none;
+  margin: 0;
+  background-color: #4e1515;
+  border: solid 2px #FFF;
+  border-radius: 2px;
+  text-align: center;
+}
+body nav .nav__ul .nav__ul__ul li {
+  display: block;
+  padding-top: 5px;
+  padding-right: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  list-style-position: inside;
+}
+
+div .div__a {
+  color: salmon;
+  font-size: 40px;
+  font-family: "Dancing Script", cursive;
+  transition: all 2s;
+}
+div .div__a:hover {
+  color: #802222;
+  width: 250px;
+}
+div .divCuadrado {
+  background-color: antiquewhite;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px 3px salmon;
+  margin: 10px;
+}
+div .parrafoPpal {
+  font-size: 25px;
+  line-height: 32px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+div .gridIndex {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+}
+div .textoIndex {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+div .envios {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+div .imgLocal {
+  background-image: url(../img/descartablesDelMar.jfif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+}
+div .imgLocal .imgLocal--index {
+  width: 100%;
+  height: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+div .flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+div .divColumn {
+  text-align: center;
+  border: 2px solid black;
+  background-color: antiquewhite;
+  text-shadow: 1px 1px 3px salmon;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 5px -2px 30px -2px salmon;
+}
+div .imgClass {
+  margin: 1%;
+}
+div .imgClass :hover {
+  transform: scale(1.5, 1.5);
+}
+
+footer {
+  background-color: antiquewhite;
+  text-align: center;
+  border: 2px solid #000;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-shadow: 5px -2px 30px -2px salmon;
+  width: 100%;
+  padding-bottom: 8px;
+  margin-top: 10px;
+  width: 100%;
+}
+footer .footer__a {
+  color: salmon;
+  font-size: 20px;
+}
+footer .footer__h4 {
+  text-shadow: 1px 1px 4px salmon;
+  text-decoration: underline;
+}
+
+h6, h5, h4, h3, h2, h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+@media (min-width: 1200px) {
+  h1, .h1 {
+    font-size: 3.5rem;
+  }
+}
+h3, .h3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+
+@media (min-width: 1200px) {
+  h3, .h3 {
+    font-size: 1.75rem;
+  }
+}
+h4, .h4 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+@media (min-width: 1200px) {
+  h4, .h4 {
+    font-size: 1.5rem;
+  }
+}
+h5, .h5 {
+  font-size: 1.25rem;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: calc(1.325rem + 0.9vw);
+  margin-bottom: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 4px salmon;
+}
+h2 .h2--cotillon {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: calc(1.325rem + 0.9vw);
+  margin-bottom: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 4px salmon;
+}
+h2 .h2--contacto {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: calc(1.325rem + 0.9vw);
+  margin-bottom: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 4px salmon;
+}
+h2 .h2--subtituloTodoSuelto {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: calc(1.325rem + 0.9vw);
+  margin-bottom: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 4px salmon;
+}
+
+.imgCotillon {
+  height: 350px;
+  width: 350px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex .video {
+  width: 18em;
+  height: 18em;
+  justify-self: center;
+}
+
+.contacto {
+  padding: 15px;
+}
+
+main .main__span {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 32px;
+  margin-bottom: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 4px salmon;
+}
+main .main__p {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+main .main-error {
+  height: 100vh;
+  width: 100%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+main .main-error span .h1-error {
+  text-align: center;
+}
+main .main-error a {
+  align-items: center;
+}
+
+article .article__span {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 32px;
+  margin-bottom: 16px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-shadow: 1px 1px 4px salmon;
+}
+article .article__div {
+  background-image: url("../img/envios.jpg");
+  height: 20%;
+  width: 20%;
+}
+
+.accordion-item {
+  background-color: #fcc2bc;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.accordion-item h2 :hover {
+  color: salmon;
+}
+
+.accordion-header :hover {
+  background-color: #802222;
+}
+
+div .flexImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+div .flexImg .imgAcordeon {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.flexCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.flexCards .card {
+  margin: 2%;
+}

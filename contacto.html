@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="contactanos, contacto, descartables del mar, todo suelto, consulta, envios">
+        <meta name="city" content="Santa Clara del Mar">
+        <meta name="country" content="Argentina">
+        <meta name="doc-type" content="Web Page">
+        <meta name="resource-type" content="Document">
+        <meta http-equiv="Content-Language" content="Es">
+        <meta name="distribution" content="Global">
+        <meta name="ROBOTS" content="INDEX, FOLLOW">
+        <meta name="ROBOTS" content="ALL">
+    
+        <meta name="author" content="Mariana Benvenuti">
+        <meta name="title" content="Descartables del Mar - El cotillón y descartable de Santa Clara">
+        <meta name="description" content="Contactate por consultas y envios gratuitos">
+        <title>Descartables del Mar</title>
+    
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/stylesDescartables.css">
+    </head>
+<body>
+    
+    <header class="container-fluid">
+        <div class="container">
+            <h1 class="header__h1 header__flexHeader tituloTienda">Descartables del Mar</h1>
+            <h2 id="subtituloTienda">Tu Compra</h2>
+        </div>
+    </header >
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse show" id="navBarToggler">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav__ul">
+                <li class="nav-item nav__ul__li "><a href="index.html">Nosotros</a></li>
+                <li class="nav-item nav__ul__li "><a href="tienda.html">Tienda</a></li>
+                <li class="nav-item nav__ul__li "><a  href="cargaArticulos.html">Articulos</a>
+                <li  class="nav-item nav__ul__li"><a  href="compra.html">Tu Compra</a></li>
+                <li class="nav-item nav__ul__li "><a  href="contacto.html">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <h2 class="h2--contacto">Contactate con nosotros...</h2> <br>
+    <!-- Formulario de contacto -->
+    <div class="flex">
+        <div class="divCuadrado contacto">
+            <form class="formContacto" action="" method="POST" >
+                <label for="nombre">Nombre: </label>
+                <input type="text" class="form-control" placeholder="Ingrese su nombre" name="nombre" required>
+                <br>
+
+                <label for="mail">Mail de contacto: </label>
+                <input type="email" class="form-control" placeholder="Ingrese su mail" name="mail" required>
+                <br>
+
+                <label for="tema">Tema de la consulta: </label>
+
+                <select name="tema">
+                    <option value="multiple" selected>Sin especificar</option>
+                    <option value="cotillon">Cotillón</option>
+                    <option value="todoSuelto">Todo Suelto</option>
+                    <option value="papelera">Papelera</option>
+                </select>
+                <br><br>
+
+                <label for="consulta">Consulta: </label>
+                <br>
+
+               
+                <textarea class="form-control" rows="4" cols="40" placeholder="Ingrese su consulta"></textarea>
+                <br><br>
+
+                <input type="checkbox" name="chkOfertas" value="1">
+                <label class="form-check-label" for="chkOfertas"><i>Deseo recibir ofertas en el mail</i></label>
+                <br><br>
+                
+                <button class="btn btn-success"type="submit">Enviar</button>
+                <button class="btn btn-danger"type="reset">Reset</button>
+
+            
+            </form>
+    </div>
+        <div class="divCuadrado contacto">
+            <h3>Encontranos en nuestro local</h3><br>
+            <iframe title="Mapa de ubicacion de nuestro local" id="mapaContacto" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12603.694041923827!2d-57.5030026!3d-37.8386765!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbfc74b1946679b26!2sCotillon%20descartables%20del%20mar!5e0!3m2!1ses-419!2sar!4v1623979742882!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>           
+
+        </div>
+    </div>
+    
+
+    <section id="clima">
+
+    </section>
+
+
+
+
+    <footer class="container-fluid">
+        <h4 class="footer_h4">Ubicacion</h4>
+            <b>Telefono:</b> 460-2434 -
+            <b>Direccion:</b> Av. Acapulco 649 - 
+            <b><i>Santa Clara del Mar, Buenos Aires, Argentina</i></b>
+        <h4 class="footer_h4">Redes</h4>
+            <b>Whatsapp:</b> 2236-199770 -
+            <b>Instagram:</b> <a class="footer__a" href="https://www.instagram.com/descartablesdelmar/" target="_blank">@descartablesdelmar</a> -
+            <b>Facebook: </b> <a class="footer__a" href="https://www.facebook.com/descartablesdelmar/" target="_blank">@descartablesdelmar</a> -
+    </footer>  
+
+    
+    <script src="js/jquery v3.6.0.min.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/clases.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
