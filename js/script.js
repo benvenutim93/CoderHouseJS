@@ -13,7 +13,9 @@ function PrintCompra(){
             Marca: ${art.Marca}<br>
             Contenido: ${art.Contenido}<br>
             Precio: ${art.Precio}<br>
-            Stock: ${art.Stock}</p>
+            Stock: ${art.Stock}<br>
+            Cantidad: ${art.Cantidad}</p>
+
             <button class="btn btn-danger buttonCard" type="submit" id="btnEliminar${art.Nombre}"> Eliminar</button>
             </div></div>`);
 
@@ -31,9 +33,6 @@ function PrintCompra(){
     }
    
 }
-
-
-
 
 function PrintTienda(){
     for(const art of articulosTienda) {
@@ -56,9 +55,23 @@ function PrintTienda(){
                 let articulo = articulosTienda.find(a => a.Nombre == articuloHTML.childNodes[1].textContent);
                 
                if(articulo != null){
-
-                compra.push(articulo);
+                   if(articulo.Stock > 0)
+                    {
+                        articulo.Stock --;
+                        let articuloCarrito = compra.find(a => a.Nombre == articulo.Nombre)
+                        if(articuloCarrito != null){
+                            articuloCarrito.Cantidad ++;
+                        }
+                        else {
+                            articulo.Cantidad = 1;
+                            compra.push(articulo);
+                        }  
+                    }
+          
+                
                 SaveLocalStorageCompra();
+                SaveLocalStorageArticulos();
+                PrintTienda();
                }
             })
         }
@@ -94,7 +107,7 @@ $("#botonCargaArticulos").click(()=>{
     }
     else {
         let art = new Articulo($("#nombre").val(), $("#descripcion").val(), $("#marca").val(), $("#contenido").val(),
-            $("#precio").val(), $("#stock").val());
+            $("#precio").val(), $("#stock").val(), 1);
    
         articulosTienda.push(art);
         SaveLocalStorageArticulos();
@@ -105,31 +118,31 @@ $("#botonCargaArticulos").click(()=>{
     }
 })
 
-$("#tituloTienda").on("mouseover", () => {
-    $("#tituloTienda").slideUp("slow");
-    $("#tituloTienda").delay(6000);
-    $("#subtituloTienda").fadeIn();
-})
+// $("#tituloTienda").on("mouseover", () => {
+//     $("#tituloTienda").slideUp("slow");
+//     $("#tituloTienda").delay(6000);
+//     $("#subtituloTienda").fadeIn();
+// })
 
-$(document).ready(function() {
-    const apiKey = "d8c036ae4fa6e63dac0c12bde2a2d528";
-    const latitud = -37.83;
-    const longitud = -57.5;
-    //Declaramos la url del API
-    const urlApi = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&units=metric&appid=${apiKey}`;
+// $(document).ready(function() {
+//     const apiKey = "d8c036ae4fa6e63dac0c12bde2a2d528";
+//     const latitud = -37.83;
+//     const longitud = -57.5;
+//     //Declaramos la url del API
+//     const urlApi = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&units=metric&appid=${apiKey}`;
     
-    $.get(urlApi, function (respuesta, estado) {
-        if(estado === "success"){
-          let datosClima = respuesta;
-          console.log(datosClima);
-            clima.innerHTML += `<div class="divCuadrado">
-                                 <h3>Ciudad: ${datosClima.name}</h3>
-                                 <p> Temperatura actual:${datosClima.main.temp}</p>
-                                </div>`;
+//     $.get(urlApi, function (respuesta, estado) {
+//         if(estado === "success"){
+//           let datosClima = respuesta;
+//           console.log(datosClima);
+//             clima.innerHTML += `<div class="divCuadrado">
+//                                  <h3>Ciudad: ${datosClima.name}</h3>
+//                                  <p> Temperatura actual:${datosClima.main.temp}</p>
+//                                 </div>`;
           
-        }
-  });
-});
+//         }
+//   });
+// });
 
 
 

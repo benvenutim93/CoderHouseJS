@@ -1,21 +1,12 @@
 class Articulo {
-    constructor (nombre, descripcion, marca, contenido, precio, stock){
+    constructor (nombre, descripcion, marca, contenido, precio, stock, cantidad){
         this.Nombre = nombre;
         this.Descripcion = descripcion;
         this.Marca = marca;
         this.Contenido = contenido;
         this.Precio = precio;
         this.Stock = stock;
-    }
-
-    Comprar(){
-        if(stock > 0){
-            stock--;
-            return true;
-        }
-        else {
-            return false;
-        }
+        this.Cantidad = cantidad;
     }
 }
 
@@ -35,6 +26,7 @@ new Articulo("Folex", "Separadores tipo fiambreros", "Margarita", "1 Kg", "$550"
 new Articulo("Cajas de pizza", "Cajas de cartón tamaño pizza", "Roland", "100 Un", "$2900", 1000),]
 
 
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [new Usuario("admin", "admin")];
-let articulosTienda = JSON.parse(localStorage.getItem("articulos")) || articulosIniciales;
-let compra = JSON.parse(localStorage.getItem("compra")) || [];
+let usuarios =          JSON.parse(localStorage.getItem("usuarios"))    || [new Usuario("admin", "admin")];
+let articulosTienda =   JSON.parse(localStorage.getItem("articulos"))   || articulosIniciales;
+let compra =            JSON.parse(localStorage.getItem("compra"))      || [];
+let userLogged =        JSON.parse(localStorage.getItem("userLogged"))  || [];
