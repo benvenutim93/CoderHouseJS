@@ -21,6 +21,7 @@
     <meta name="description" content="Nos dedicamos a la venta por mayor y menor de cotillón, descartables y todo suelto.">
     <title>Descartables del Mar</title>
 
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
@@ -41,12 +42,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse show" id="navBarToggler">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav__ul">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav__ul ">
                 <li class="nav-item nav__ul__li "><a href="index.html">Nosotros</a></li>
                 <li class="nav-item nav__ul__li "><a href="tienda.html">Tienda</a></li>
-                <li class="nav-item nav__ul__li "><a  href="cargaArticulos.html">Articulos</a>
-                <li  class="nav-item nav__ul__li"><a  href="compra.html">Tu Compra</a></li>
+                <li class="nav-item nav__ul__li "><a  href="cargaArticulos.html"  id="nav_articulo">Articulos</a>
                 <li class="nav-item nav__ul__li "><a  href="contacto.html">Contacto</a></li>
+                <li  id="carrito" class="nav-item nav__ul__li"><a  href="compra.html"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
           </div>
         </div>
@@ -91,16 +92,25 @@
 
     </section>
 
-    <footer class="container-fluid">
-        <h4 class="footer_h4">Ubicacion</h4>
-            <b>Telefono:</b> 460-2434 -
-            <b>Direccion:</b> Av. Acapulco 649 - 
-            <b><i>Santa Clara del Mar, Buenos Aires, Argentina</i></b>
-        <h4 class="footer_h4">Redes</h4>
-            <b>Whatsapp:</b> 2236-199770 -
-            <b>Instagram:</b> <a class="footer__a" href="https://www.instagram.com/descartablesdelmar/" target="_blank">@descartablesdelmar</a> -
-            <b>Facebook: </b> <a class="footer__a" href="https://www.facebook.com/descartablesdelmar/" target="_blank">@descartablesdelmar</a> -
-    </footer>  
+    <footer class="footer py-4" id="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Mariana Benvenuti 2021</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-danger btn-social mx-2" href="https://www.instagram.com/descartablesdelmar/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-danger btn-social mx-2" href="https://www.facebook.com/descartablesdelmar/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-danger btn-social mx-2" href="https://wa.link/h0k7nj"><i class="fab fa-whatsapp" target="_blank"></i></a>
+                </div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <ul>
+                        <li><b>Telefono:</b> 460-2434 </li>
+                        <li><b>Direccion:</b> Av. Acapulco 649</li>
+                        <li><b><i>Santa Clara del Mar, Buenos Aires, Argentina</i></b></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>    
 
     <script src="js/jquery v3.6.0.min.js"></script>
     <script src="js/dom.js"></script>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descartables del Mar</title>
 
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.min.js"></script>
 
@@ -26,28 +27,29 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse show" id="navBarToggler">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav__ul">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav__ul ">
                 <li class="nav-item nav__ul__li "><a href="index.html">Nosotros</a></li>
                 <li class="nav-item nav__ul__li "><a href="tienda.html">Tienda</a></li>
-                <li class="nav-item nav__ul__li "><a  href="cargaArticulos.html">Articulos</a>
-                <li  class="nav-item nav__ul__li"><a  href="compra.html">Tu Compra</a></li>
+                <li class="nav-item nav__ul__li "><a  href="cargaArticulos.html"  id="nav_articulo">Articulos</a>
                 <li class="nav-item nav__ul__li "><a  href="contacto.html">Contacto</a></li>
+                <li  id="carrito" class="nav-item nav__ul__li"><a  href="compra.html"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
           </div>
         </div>
       </nav>
-        <div id="logIn">
-            <form class="divCuadrado">
-              <h4>Log In</h4>
+        <!-- <div id="logIn">
+            <form class="divCuadrado form_logIn">
+              <h4>Iniciar Sesión</h4><br>
               <label for="usuario">Usuario:</label>
               <input type="text" name="usuario" id="usuario" placeholder="Nombre usuario"><br>
               <label for="contrasenia">Contraseña:</label>
-              <input type="password" name="contrasenia" id="contrasenia" placeholder="Descripcion"><br>
-              <button>Log In</button>
+              <input type="password" name="contrasenia" id="contrasenia" placeholder="Contraseña"><br>
+              <br>
+              <button class="btn btn-success">Iniciar Sesión</button>
             </form>
-        </div>
+        </div> -->
 
-        <div class="divCargaArticulos divCuadrado" id="divFormulario">
+        <div class="divCuadrado divCargaArticulos" id="divFormulario">
             <form id="cargaArticulos" action="" method="">
                 <h4>Ingreso de Articulos</h4>
                 <label for="nombre">Nombre:</label>
@@ -72,6 +74,25 @@
         <section id="clima">
 
         </section>
+        <footer class="footer py-4" id="footer">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-lg-4 text-lg-start">Copyright &copy; Mariana Benvenuti 2021</div>
+                  <div class="col-lg-4 my-3 my-lg-0">
+                      <a class="btn btn-danger btn-social mx-2" href="https://www.instagram.com/descartablesdelmar/" target="_blank"><i class="fab fa-instagram"></i></a>
+                      <a class="btn btn-danger btn-social mx-2" href="https://www.facebook.com/descartablesdelmar/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-danger btn-social mx-2" href="https://wa.link/h0k7nj"><i class="fab fa-whatsapp" target="_blank"></i></a>
+                  </div>
+                  <div class="col-lg-4 my-3 my-lg-0">
+                      <ul>
+                          <li><b>Telefono:</b> 460-2434 </li>
+                          <li><b>Direccion:</b> Av. Acapulco 649</li>
+                          <li><b><i>Santa Clara del Mar, Buenos Aires, Argentina</i></b></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </footer>    
     <script src="js/jquery v3.6.0.min.js"></script>
     <script src="js/dom.js"></script>
     <script src="js/clases.js"></script>

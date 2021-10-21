@@ -43,4 +43,11 @@ input{
     margin: 1%;
     width: 30%;
     height: auto;
+    align-items: center;
 }
+.form_logIn{
+    padding: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+

@@ -1,3 +1,5 @@
+
+
 //Impresion de articulos
 function PrintCompra(){
     if(compra.length == 0){
@@ -15,17 +17,59 @@ function PrintCompra(){
             Precio: ${art.Precio}<br>
             Stock: ${art.Stock}<br>
             Cantidad: ${art.Cantidad}</p>
-
-            <button class="btn btn-danger buttonCard" type="submit" id="btnEliminar${art.Nombre}"> Eliminar</button>
+            <button class="btn btn-success type="button" id="mas${art.Nombre}">+</button>
+            <button class="btn btn-dark" type="submit" id="btnEliminar${art.Nombre}"> Eliminar</button>
+            <button class="btn btn-danger type="button" id="menos${art.Nombre}">-</button>
             </div></div>`);
 
+            $(`#mas${art.Nombre}`).click((e) =>{
+                let articuloHTML = document.getElementById(e.target.id).parentElement; 
+                let articuloTienda = articulosTienda.find(a => a.Nombre == articuloHTML.childNodes[1].textContent);
 
-            $("#btnEliminar"+art.Nombre).on("click", (e) => {
-                let articuloHTML = document.getElementById(e.target.id).parentElement 
-                let articulo = articulosTienda.find(a => a.Nombre == articuloHTML.childNodes[1].textContent);
-                compra.shift(articulo);
+                if(articuloTienda.Stock > 0){
+                    let articulo = compra.find(a => a.Nombre == articuloTienda.Nombre);
+                    articulo.Cantidad ++;
+                    
+                    articuloTienda.Stock --;
+                    articulo.Stock = articuloTienda.Stock;
+                    SaveLocalStorageCompra();
+                    SaveLocalStorageArticulos();
+                    
+                }
+            });
+
+            $(`#menos${art.Nombre}`).click((e) =>{
+                let articuloHTML = document.getElementById(e.target.id).parentElement; 
+                let articuloTienda = articulosTienda.find(a => a.Nombre == articuloHTML.childNodes[1].textContent);
+
+                
+                let articulo = compra.find(a => a.Nombre == articuloTienda.Nombre);
+                articulo.Cantidad --;
+                articuloTienda.Stock ++;
+                articulo.Stock = articuloTienda.Stock;
+                
+                if(articulo.Cantidad == 0){
+                    compra.shift(articulo);
+                }
+
                 SaveLocalStorageCompra();
-                $(`#compra${art.Nombre}`).fadeOut(); 
+                SaveLocalStorageArticulos();
+                
+            });
+            
+            $("#btnEliminar"+art.Nombre).on("click", (e) => {
+                let articuloHTML = document.getElementById(e.target.id).parentElement; 
+
+                let articuloEliminado = compra.find(a => a.Nombre == articuloHTML.childNodes[1].textContent);
+                
+                let articulo = articulosTienda.find(a => a.Nombre == articuloEliminado.Nombre);
+                //Vuelvo a sumar la cantidad comprar en el stock del articulo
+                articulo.Stock += articuloEliminado.Cantidad;
+
+                compra.shift(articuloEliminado);
+                SaveLocalStorageCompra();
+                SaveLocalStorageArticulos();
+                $(`#compra${art.Nombre}`).fadeOut("fast"); 
                 PrintCompra();
                 
             });
@@ -46,6 +90,7 @@ function PrintTienda(){
             Contenido: ${art.Contenido}<br>
             Precio: ${art.Precio}<br>
             Stock: ${art.Stock}</p>
+           
             <button class="btn btn-primary buttonCard" type="button" id="btn${art.Nombre}"> Comprar</button>
             
             </div></div>`);
@@ -55,19 +100,22 @@ function PrintTienda(){
                 let articulo = articulosTienda.find(a => a.Nombre == articuloHTML.childNodes[1].textContent);
                 
                if(articulo != null){
+               
+
                    if(articulo.Stock > 0)
                     {
                         articulo.Stock --;
                         let articuloCarrito = compra.find(a => a.Nombre == articulo.Nombre)
                         if(articuloCarrito != null){
                             articuloCarrito.Cantidad ++;
+                            articuloCarrito.Stock = articulo.Stock;
                         }
                         else {
                             articulo.Cantidad = 1;
                             compra.push(articulo);
                         }  
                     }
-          
+        
                 
                 SaveLocalStorageCompra();
                 SaveLocalStorageArticulos();
@@ -78,7 +126,6 @@ function PrintTienda(){
     }
 }
 
-{/* <button class="btn btn-primary buttonCard" type="button" id="btn${art.Nombre}"> Comprar</button> */}
 //Grabado en LocalStorage
 function SaveLocalStorageArticulos(){
     let stringJson = JSON.stringify(articulosTienda);
@@ -97,12 +144,11 @@ function VaciarInputs(){
     }
 }
 
-
 //EVENTOS
 $("#botonCargaArticulos").click(()=>{
 
     if(articulosTienda.find( art => art.Nombre == $("#nombre").val())){
-        $("#estado").html("El libro ya se encuentra cargado.");
+        $("#estado").html("El articulo ya se encuentra cargado.");
         $("#estado").css("color", "red");
     }
     else {
@@ -116,8 +162,10 @@ $("#botonCargaArticulos").click(()=>{
         $("#estado").html("Articulo agregado con éxito. <br> Visible en apartado Tienda.");
         $("#estado").css("color", "green"); 
     }
-})
+});
 
+
+//Consumo de API
 // $("#tituloTienda").on("mouseover", () => {
 //     $("#tituloTienda").slideUp("slow");
 //     $("#tituloTienda").delay(6000);
@@ -149,5 +197,4 @@ $("#botonCargaArticulos").click(()=>{
     SaveLocalStorageArticulos();
     PrintTienda();
     PrintCompra();
-    $("#subtituloTienda").hide();
 
