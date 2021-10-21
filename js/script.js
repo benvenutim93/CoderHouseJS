@@ -17,9 +17,8 @@ function PrintCompra(){
             Precio: ${art.Precio}<br>
             Stock: ${art.Stock}<br>
             Cantidad: ${art.Cantidad}</p>
-            <button class="btn btn-success type="button" id="mas${art.Nombre}">+</button>
-            <button class="btn btn-dark" type="submit" id="btnEliminar${art.Nombre}"> Eliminar</button>
-            <button class="btn btn-danger type="button" id="menos${art.Nombre}">-</button>
+            <button class="btn btn-success btnCarrito" type="button" id="mas${art.Nombre}">+</button>
+            <button class="btn btn-danger btnCarrito" type="button" id="menos${art.Nombre}">-</button>
             </div></div>`);
 
             $(`#mas${art.Nombre}`).click((e) =>{
@@ -35,6 +34,8 @@ function PrintCompra(){
                     SaveLocalStorageCompra();
                     SaveLocalStorageArticulos();
                     
+                $("#tuCompra").empty();
+                PrintCompra();
                 }
             });
 
@@ -50,10 +51,13 @@ function PrintCompra(){
                 
                 if(articulo.Cantidad == 0){
                     compra.shift(articulo);
+                    $(`#compra${art.Nombre}`).fadeOut("fast"); 
                 }
 
                 SaveLocalStorageCompra();
                 SaveLocalStorageArticulos();
+                $("#tuCompra").empty();
+                PrintCompra();
                 
             });
             
@@ -69,7 +73,7 @@ function PrintCompra(){
                 compra.shift(articuloEliminado);
                 SaveLocalStorageCompra();
                 SaveLocalStorageArticulos();
-                $(`#compra${art.Nombre}`).fadeOut("fast"); 
+                
                 PrintCompra();
                 
             });
