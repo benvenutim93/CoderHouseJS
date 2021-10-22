@@ -1,4 +1,4 @@
-
+cantProductos.style.display = "none";
 
 //Impresion de articulos
 function PrintCompra(){
@@ -104,7 +104,6 @@ function PrintTienda(){
                 let articulo = articulosTienda.find(a => a.Nombre == articuloHTML.childNodes[1].textContent);
                 
                if(articulo != null){
-               
 
                    if(articulo.Stock > 0)
                     {
@@ -117,15 +116,17 @@ function PrintTienda(){
                         else {
                             articulo.Cantidad = 1;
                             compra.push(articulo);
+                            cantProductos.style.display = "block";
+                            cantProductos.textContent = compra.length;
                         }  
                     }
-        
-                
+                    
                 SaveLocalStorageCompra();
                 SaveLocalStorageArticulos();
+                $("#tienda").empty();
                 PrintTienda();
                }
-            })
+            });
         }
     }
 }
@@ -168,33 +169,9 @@ $("#botonCargaArticulos").click(()=>{
     }
 });
 
-
-//Consumo de API
-// $("#tituloTienda").on("mouseover", () => {
-//     $("#tituloTienda").slideUp("slow");
-//     $("#tituloTienda").delay(6000);
-//     $("#subtituloTienda").fadeIn();
-// })
-
-// $(document).ready(function() {
-//     const apiKey = "d8c036ae4fa6e63dac0c12bde2a2d528";
-//     const latitud = -37.83;
-//     const longitud = -57.5;
-//     //Declaramos la url del API
-//     const urlApi = `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&units=metric&appid=${apiKey}`;
-    
-//     $.get(urlApi, function (respuesta, estado) {
-//         if(estado === "success"){
-//           let datosClima = respuesta;
-//           console.log(datosClima);
-//             clima.innerHTML += `<div class="divCuadrado">
-//                                  <h3>Ciudad: ${datosClima.name}</h3>
-//                                  <p> Temperatura actual:${datosClima.main.temp}</p>
-//                                 </div>`;
-          
-//         }
-//   });
-// });
+$("#btnCarrito").click(() => {
+    window.location.href = 'compra.html'
+})
 
 
 

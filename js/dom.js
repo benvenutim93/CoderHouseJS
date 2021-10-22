@@ -5,7 +5,7 @@ const estado = document.getElementById("estado");
 const tuCompra = document.getElementById("tuCompra");
 const clima = document.getElementById("clima");
 const carrito = document.getElementById("carrito");
-
+const cantProductos = document.getElementById("cantProductos");
 
 const nombreArt = document.getElementById("nombre");
 const descripcionArt = document.getElementById("descripcion");
